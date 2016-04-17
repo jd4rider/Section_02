@@ -33,7 +33,7 @@ public:
 
 	void Reset();  // TODO make a more rich return value.
 	// provide a method for counting bulls & cows, and increasing turn #
-	FBullCowCount SubmitGuess(FString);
+	FBullCowCount SubmitValidGuess(FString);
 
 // ^^ Please try and ignore this and focus on the interface above ^^
 private:
@@ -41,4 +41,8 @@ private:
 	int32 MyCurrentTry;
 	int32 MyMaxTries;
 	FString MyHiddenWord;
+	bool bGameIsWon;
+
+	bool IsIsogram(FString) const;
+	bool IsLowercase(FString) const;
 };
